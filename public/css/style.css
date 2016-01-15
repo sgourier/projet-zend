@@ -10,38 +10,7 @@ body {
     src: url('../fonts/dinneuzeitgroteskstd-bdcond-opentype.otf');
 }
 
-.zf-green {
-    color: #68b604;
-}
 
-.btn-success {
-  background-color: #57a900;
-  background-image: -moz-linear-gradient(top, #70d900, #57a900);
-  background-image: -ms-linear-gradient(top, #70d900, #57a900);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
-  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
-  background-image: -o-linear-gradient(top, #70d900, #57a900);
-  background-image: linear-gradient(top, #70d900, #57a900);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
-}
-
-.btn-success:hover,
-.btn-success:active,
-.btn-success.active,
-.btn-success.disabled,
-.btn-success[disabled] {
-  background-color: #57a900;
-}
-
-.btn-success:active, .btn-success.active {
-  background-color: #57a900;
-}
-
-div.container a.brand {
-    background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
-    margin-left: 0;
-    padding: 8px 20px 12px 40px;
-}
 
 
 
@@ -54,6 +23,7 @@ div.container a.brand {
     padding:15px;
     margin:50px auto 0;
     overflow: hidden;
+    color:black;
 }
     .container_connexion_inscription .parts{
         float: left;
@@ -79,4 +49,30 @@ div.container a.brand {
 
         .container_connexion_inscription .parts .title{
             text-transform: uppercase;
+        }
+        .container_connexion_inscription .parts .champ{
+            text-align: left !important;
+            text-indent:5px;
+            color:black !important;
+            font-size: 150%;
+            margin-top:15px;
+        }
+        .container_connexion_inscription .parts .input{
+            text-transform: uppercase;
+            text-align: left;
+            padding:5px;
+            background-color: rgba(62,62,62,0.17);
+            border:none;
+            width: 90%;
+            font-size: 150%;
+        }
+        .container_connexion_inscription .parts input[type=submit]{
+            background-color: rgb(72,119,184);
+            padding:5px;
+            width: 70%;
+            color:white;
+            margin-top:30px;
+            font-size: 150%;
+            border: none;
+            margin-bottom: 10px;
         }
