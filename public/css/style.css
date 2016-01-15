@@ -58,7 +58,6 @@ body {
             margin-top:15px;
         }
         .container_connexion_inscription .parts .input{
-            text-transform: uppercase;
             text-align: left;
             padding:5px;
             background-color: rgba(62,62,62,0.17);
@@ -76,3 +75,24 @@ body {
             border: none;
             margin-bottom: 10px;
         }
+            .container_connexion_inscription .parts input[type=submit]:hover{
+                background-color: #1c5097;
+            }
+        .container_connexion_inscription .parts .colors{
+            width:90%;
+            margin:10px auto 10px;
+        }
+            .container_connexion_inscription .parts .colors .color{
+                float: left;
+                width:20%;
+            }
+                .container_connexion_inscription .parts .colors .color .color_in{
+                    margin:15px auto 0;
+                    width:20px;
+                    height:20px;
+                    border:1px solid transparent;
+                    cursor: pointer;
+                }
+                    .container_connexion_inscription .parts .colors .color .color_in:hover{
+                        border:1px solid black;
+                    }
