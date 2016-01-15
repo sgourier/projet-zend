@@ -38,7 +38,7 @@ return array(
                     'route'    => '/game',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',
-                        'action'     => 'game',
+                        'action'     => 'game' ,
                     ),
                 ),
             ),
