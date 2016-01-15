@@ -1,6 +1,13 @@
 body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+    background-image: url('../img/background.jpg');
+    background-repeat:no-repeat;
+    background-position: center;
+    font-family: font;
+}
+
+@font-face {
+    font-family: font;
+    src: url('../fonts/dinneuzeitgroteskstd-bdcond-opentype.otf');
 }
 
 .zf-green {
@@ -35,3 +42,41 @@ div.container a.brand {
     margin-left: 0;
     padding: 8px 20px 12px 40px;
 }
+
+
+
+/***********************************************************************************/
+/*                                  ACCUEIL                                        */
+/***********************************************************************************/
+.container_connexion_inscription{
+    width: 50%;
+    background-color: rgba(255,255,255,0.9);
+    padding:15px;
+    margin:50px auto 0;
+    overflow: hidden;
+}
+    .container_connexion_inscription .parts{
+        float: left;
+        width:49%;
+        text-align: center;
+    }
+        .container_connexion_inscription .parts.inscription{
+            border-left: 1px solid silver;
+        }
+        .container_connexion_inscription .parts .icone{
+            height:40px;
+            width:100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 90%;
+        }
+        .container_connexion_inscription .parts.inscription .icone{
+            background-image:url("../img/connexion_inscription/icone_inscription.png");
+        }
+        .container_connexion_inscription .parts.connexion .icone{
+            background-image:url("../img/connexion_inscription/icone_connexion.png");
+        }
+
+        .container_connexion_inscription .parts .title{
+            text-transform: uppercase;
+        }
