@@ -29,4 +29,7 @@ class IndexController extends AbstractActionController
 		    "prenom" => $firstname
 		]);
 	}
+	public function gameAction(){
+		return new ViewModel();
+	}
 }
