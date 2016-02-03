@@ -5,12 +5,12 @@
         <div class="champ">
             Identifiant
         </div>
-        <input type="text" class="input">
+        <input type="text" class="input" name="player_name">
         <br/>
         <div class="champ">
             Mot de passe
         </div>
-        <input type="text" class="input">
+        <input type="text" class="input" name="player_password">
         <input type="submit" value="Connexion">
     </form>
     <form class="parts inscription">
@@ -19,18 +19,19 @@
         <div class="champ">
             Identifiant
         </div>
-        <input type="text" class="input">
+        <input type="text" class="input" name="player_name">
         <br/>
         <div class="champ">
             Mot de passe
         </div>
-        <input type="text" class="input">
+        <input type="text" class="input" name="player_password">
         <br/>
         <div class="champ">
             Email
         </div>
-        <input type="text" class="input">
+        <input type="text" class="input" name="player_email">
         <div class="colors">
+            <input type="hidden" value="null" class="color_player" name="player_color">
             <div class="color">
                 <div class="color_in" style="background-color:#662d91" data-color="#662d91"></div>
             </div>
@@ -65,3 +66,4 @@
         <input type="submit" value="Inscription">
     </form>
 </div>
+<script type="text/javascript" src="js/connexion_inscription/script.js"></script>
