@@ -1,6 +1,8 @@
-function lancer_partie( obj , url ){
-    afficher_game(obj);
+var baseUrl = null;
 
+function lancer_partie( obj , url ){
+    var baseUrl = url;
+    afficher_game(obj);
 }
 
 
@@ -12,12 +14,28 @@ setTimeout(function(){
     $el_parent.modal('hide');
 }, 3000);
 
+/****************************************************************************************/
+/*                                      GAME                                            */
+/****************************************************************************************/
+function endGame(url){
+    $.ajax({
+        url: baseUrl+"/tirage";
+    }).done(function( data ) {
+        alert(data.result) ;
+    });
+}
 
+
+
+
+/****************************************************************************************/
+/*                                      TIRAGES                                         */
+/****************************************************************************************/
 
 function tirer_chiffre(){
     alert();
     $.ajax({
-        url: url
+        url: baseUrl+"/tirage";
     }).done(function( data ) {
         alert(data.new) ;
     });
