@@ -11,6 +11,9 @@ namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Zend\Authentication\Storage;
+use Zend\Authentication\Adapter\DbTable as DbTableAuthAdapter;
+use DoctrineModule\Service\Authentication\AuthenticationServiceFactory;
 
 class Module
 {
@@ -36,4 +39,16 @@ class Module
             ),
         );
     }
+
+	public function getServiceConfig()
+	{
+		return array(
+			'factories'=>array(
+				'Zend\Authentication\AuthenticationService' => function($serviceManager) {
+					// If you are using DoctrineORMModule:
+					return $serviceManager->get('doctrine.authenticationservice.orm_default');
+				}
+			),
+		);
+	}
 }

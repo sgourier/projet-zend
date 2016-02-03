@@ -1,0 +1,49 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Numbers
+ *
+ * @ORM\Table(name="numbers", indexes={@ORM\Index(name="fk_numbers_card_idx", columns={"card_id"})})
+ * @ORM\Entity
+ */
+class Numbers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="number", type="integer", nullable=true)
+     */
+    private $number;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="found", type="boolean", nullable=true)
+     */
+    private $found;
+
+    /**
+     * @var \Application\\Entity\Card
+     *
+     * @ORM\ManyToOne(targetEntity="Application\\Entity\Card")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="card_id", referencedColumnName="id")
+     * })
+     */
+    private $card;
+
+
+}
