@@ -6,28 +6,45 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Numbers
+ *
+ * @ORM\Table(name="numbers", indexes={@ORM\Index(name="fk_numbers_card_idx", columns={"card_id"})})
+ * @ORM\Entity
  */
 class Numbers
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="number", type="integer", nullable=true)
      */
     private $number;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="found", type="boolean", nullable=true)
      */
     private $found;
 
     /**
      * @var \Application\\Entity\Card
+     *
+     * @ORM\ManyToOne(targetEntity="Application\\Entity\Card")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="card_id", referencedColumnName="id")
+     * })
      */
     private $card;
+
 
 
     /**
@@ -49,7 +66,7 @@ class Numbers
     public function setNumber($number)
     {
         $this->number = $number;
-
+    
         return $this;
     }
 
@@ -72,7 +89,7 @@ class Numbers
     public function setFound($found)
     {
         $this->found = $found;
-
+    
         return $this;
     }
 
@@ -89,20 +106,20 @@ class Numbers
     /**
      * Set card
      *
-     * @param \Application\Entity\Card $card
+     * @param \Application\\Entity\Card $card
      * @return Numbers
      */
     public function setCard(\Application\Entity\Card $card = null)
     {
         $this->card = $card;
-
+    
         return $this;
     }
 
     /**
      * Get card
      *
-     * @return \Application\Entity\Card
+     * @return \Application\\Entity\Card 
      */
     public function getCard()
     {

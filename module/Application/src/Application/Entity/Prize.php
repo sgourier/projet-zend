@@ -6,48 +6,70 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Prize
+ *
+ * @ORM\Table(name="prize")
+ * @ORM\Entity
  */
 class Prize
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="texte", type="text", length=65535, nullable=false)
      */
     private $texte;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
     private $image;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="price", type="integer", nullable=false)
      */
     private $price;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="quantity", type="integer", nullable=false)
      */
     private $quantity;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="dateadd", type="datetime", nullable=false)
      */
     private $dateadd;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="dateupd", type="datetime", nullable=false)
      */
     private $dateupd;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="active", type="boolean", nullable=false)
      */
     private $active;
+
 
 
     /**
@@ -69,7 +91,7 @@ class Prize
     public function setTexte($texte)
     {
         $this->texte = $texte;
-
+    
         return $this;
     }
 
@@ -92,7 +114,7 @@ class Prize
     public function setImage($image)
     {
         $this->image = $image;
-
+    
         return $this;
     }
 
@@ -115,7 +137,7 @@ class Prize
     public function setPrice($price)
     {
         $this->price = $price;
-
+    
         return $this;
     }
 
@@ -138,7 +160,7 @@ class Prize
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
-
+    
         return $this;
     }
 
@@ -161,7 +183,7 @@ class Prize
     public function setDateadd($dateadd)
     {
         $this->dateadd = $dateadd;
-
+    
         return $this;
     }
 
@@ -184,7 +206,7 @@ class Prize
     public function setDateupd($dateupd)
     {
         $this->dateupd = $dateupd;
-
+    
         return $this;
     }
 
@@ -207,7 +229,7 @@ class Prize
     public function setActive($active)
     {
         $this->active = $active;
-
+    
         return $this;
     }
 

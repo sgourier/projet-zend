@@ -1,5 +1,5 @@
 <div class="container_connexion_inscription">
-    <form class="parts connexion" action="<?php echo $this->url('game');  ?>" mathod="">
+    <form class="parts connexion" action="<?php echo $this->url('login');  ?>" method="POST">
         <div class="icone"></div>
         <div class="title">Connexion</div>
         <div class="champ">
@@ -10,10 +10,10 @@
         <div class="champ">
             Mot de passe
         </div>
-        <input type="text" class="input" name="player_password">
+        <input type="password" class="input" name="player_password">
         <input type="submit" value="Connexion">
     </form>
-    <form class="parts inscription">
+    <form class="parts inscription" method="POST" action="<?php echo $this->url('saveUser');  ?>">
         <div class="icone"></div>
         <div class="title">Inscription</div>
         <div class="champ">
@@ -24,7 +24,7 @@
         <div class="champ">
             Mot de passe
         </div>
-        <input type="text" class="input" name="player_password">
+        <input type="password" class="input" name="player_password">
         <br/>
         <div class="champ">
             Email

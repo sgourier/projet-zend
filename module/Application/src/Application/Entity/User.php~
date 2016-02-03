@@ -1,0 +1,95 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="user")
+ * @ORM\Entity
+ */
+class User
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateadd", type="datetime", nullable=false)
+     */
+    private $dateadd;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateupd", type="datetime", nullable=false)
+     */
+    private $dateupd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mail", type="string", length=255, nullable=false)
+     */
+    private $mail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=1500, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="points", type="integer", nullable=false)
+     */
+    private $points;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="active", type="boolean", nullable=false)
+     */
+    private $active;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="color", type="string", length=50, nullable=false)
+     */
+    private $color;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=2500, nullable=false)
+     */
+    private $username;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="admin", type="boolean", nullable=false)
+     */
+    private $admin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password_salt", type="string", length=32, nullable=true)
+     */
+    private $passwordSalt;
+
+
+}

@@ -6,33 +6,52 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Results
+ *
+ * @ORM\Table(name="results", indexes={@ORM\Index(name="fk_results_user1_idx", columns={"user_id"})})
+ * @ORM\Entity
  */
 class Results
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="dateadd", type="datetime", nullable=true)
      */
     private $dateadd;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="dateupd", type="datetime", nullable=true)
      */
     private $dateupd;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="won", type="boolean", nullable=true)
      */
     private $won;
 
     /**
      * @var \Application\\Entity\User
+     *
+     * @ORM\ManyToOne(targetEntity="Application\\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
      */
     private $user;
+
 
 
     /**
@@ -54,7 +73,7 @@ class Results
     public function setDateadd($dateadd)
     {
         $this->dateadd = $dateadd;
-
+    
         return $this;
     }
 
@@ -77,7 +96,7 @@ class Results
     public function setDateupd($dateupd)
     {
         $this->dateupd = $dateupd;
-
+    
         return $this;
     }
 
@@ -100,7 +119,7 @@ class Results
     public function setWon($won)
     {
         $this->won = $won;
-
+    
         return $this;
     }
 
@@ -117,13 +136,13 @@ class Results
     /**
      * Set user
      *
-     * @param \Application\Entity\User $user
+     * @param \Application\\Entity\User $user
      * @return Results
      */
     public function setUser(\Application\Entity\User $user = null)
     {
         $this->user = $user;
-
+    
         return $this;
     }
 

@@ -52,6 +52,26 @@ return array(
                     ),
                 ),
             ),
+            'login' => array(
+	            'type' => 'Zend\Mvc\Router\Http\Literal',
+	            'options' => array(
+		            'route'    => '/login',
+		            'defaults' => array(
+			            'controller' => 'Application\Controller\User',
+			            'action'     => 'login' ,
+		            ),
+	            ),
+            ),
+            'saveUser' => array(
+	            'type' => 'Zend\Mvc\Router\Http\Literal',
+	            'options' => array(
+		            'route'    => '/saveUser',
+		            'defaults' => array(
+			            'controller' => 'Application\Controller\User',
+			            'action'     => 'saveUser' ,
+		            ),
+	            ),
+            ),
             'tirage' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -116,7 +136,8 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => Controller\IndexController::class,
-            'Application\Controller\Admin' => Controller\AdminController::class
+            'Application\Controller\Admin' => Controller\AdminController::class,
+            'Application\Controller\User' => Controller\UserController::class
         ),
     ),
     'view_manager' => array(
