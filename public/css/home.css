@@ -1,0 +1,84 @@
+
+
+/***********************************************************************************/
+/*                                  ACCUEIL                                        */
+/***********************************************************************************/
+.container_connexion_inscription{
+    width: 680px;
+    background-color: rgba(255,255,255,0.9);
+    padding:15px;
+    margin:50px auto 0;
+    overflow: hidden;
+    color:black;
+}
+.container_connexion_inscription .parts{
+    float: left;
+    width:49%;
+    text-align: center;
+}
+.container_connexion_inscription .parts.inscription{
+    border-left: 1px solid silver;
+}
+.container_connexion_inscription .parts .icone{
+    height:40px;
+    width:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 90%;
+}
+.container_connexion_inscription .parts.inscription .icone{
+    background-image:url("../img/connexion_inscription/icone_inscription.png");
+}
+.container_connexion_inscription .parts.connexion .icone{
+    background-image:url("../img/connexion_inscription/icone_connexion.png");
+}
+
+.container_connexion_inscription .parts .title{
+    text-transform: uppercase;
+}
+.container_connexion_inscription .parts .champ{
+    text-align: left !important;
+    text-indent:5px;
+    color:black !important;
+    font-size: 150%;
+    margin-top:15px;
+}
+.container_connexion_inscription .parts .input{
+    text-align: left;
+    padding:5px;
+    background-color: rgba(62,62,62,0.17);
+    border:none;
+    width: 90%;
+    font-size: 150%;
+}
+.container_connexion_inscription .parts input[type=submit]{
+    background-color: rgb(72,119,184);
+    padding:5px;
+    width: 70%;
+    color:white;
+    margin-top:30px;
+    font-size: 150%;
+    border: none;
+    margin-bottom: 10px;
+}
+.container_connexion_inscription .parts input[type=submit]:hover{
+    background-color: #1c5097;
+}
+.container_connexion_inscription .parts .colors{
+    width:90%;
+    margin:10px auto 10px;
+}
+.container_connexion_inscription .parts .colors .color{
+    float: left;
+    width:20%;
+}
+.container_connexion_inscription .parts .colors .color .color_in{
+    margin:15px auto 0;
+    width:20px;
+    height:20px;
+    border:1px solid transparent;
+    cursor: pointer;
+}
+.container_connexion_inscription .parts .colors .color .color_in:hover{
+    border:1px solid black;
+}
