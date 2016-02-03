@@ -82,3 +82,7 @@
 .container_connexion_inscription .parts .colors .color .color_in:hover{
     border:1px solid black;
 }
+.container_connexion_inscription .parts .colors .color .color_in.active{
+    border:1px solid black;
+    box-shadow:0 0 5px gray;
+}
