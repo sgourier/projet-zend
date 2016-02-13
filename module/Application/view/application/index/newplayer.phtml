@@ -1,0 +1,23 @@
+<div class="content">
+    <form class="new_player" action="<?php echo $this->url("home")?>game/wait" onsubmit="return verif_player_ready();" method="POST">
+        <div class="infos">
+            Prix d'une carte : 5 jetons
+        </div>
+        <div class="nb_cards">
+            <div class="bouton_nb_cards active" data-nbcart="1">1</div>
+            <div class="bouton_nb_cards" data-nbcart="2">2</div>
+            <input type="hidden" value="1" class="input_nb_cards" name="nb_cards">
+        </div>
+        <div class="container_button">
+            <input type="submit" class="button bouton_ready" value="Lancer la partie !" />
+        </div>
+    </form>
+</div>
+<div class="content_right">
+    Vous disposez de X jetons
+</div>
+
+
+
+
+<script type="text/javascript" src="js/game/newplayer.js"></script>

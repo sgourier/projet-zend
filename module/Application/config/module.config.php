@@ -32,13 +32,33 @@ return array(
 		            ),
 	            ),
             ),
+            'newplayer' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/newplayer',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Index',
+                        'action'     => 'newplayer' ,
+                    ),
+                ),
+            ),
             'game' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route'    => '/game',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
-                        'action'     => 'game' ,
+                        'controller' => 'Application\Controller\Game',
+                        'action'     => 'index' ,
+                    ),
+                ),
+            ),
+            'wait' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/game/wait',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Game',
+                        'action'     => 'wait' ,
                     ),
                 ),
             ),
@@ -137,6 +157,7 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => Controller\IndexController::class,
             'Application\Controller\Admin' => Controller\AdminController::class,
+            'Application\Controller\Game' => Controller\GameController::class,
             'Application\Controller\User' => Controller\UserController::class
         ),
     ),

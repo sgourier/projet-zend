@@ -11,6 +11,8 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Application\Entity\Card;
+use Application\Entity\User;
 
 class IndexController extends AbstractActionController
 {
@@ -29,7 +31,18 @@ class IndexController extends AbstractActionController
 		    "prenom" => $firstname
 		]);
 	}
-	public function gameAction(){
+
+
+	public function newplayerAction(){
+		//$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+		return new ViewModel();
+	}
+
+	public function readyAction(){
+
+		//$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+		// $em->getRepository("Card");
+
 		return new ViewModel();
 	}
 }

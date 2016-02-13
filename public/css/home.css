@@ -86,3 +86,48 @@
     border:1px solid black;
     box-shadow:0 0 5px gray;
 }
+
+
+/***********************************************************************************/
+/*                                 NOUVEAU JOUEUR                                  */
+/***********************************************************************************/
+.new_player{
+    text-align: center;
+}
+    .new_player .infos{
+        margin-top:20px;
+        font-size:150%;
+        color:white;
+    }
+    .new_player .nb_cards{
+        width: 80%;
+        margin:50px auto 0;
+        overflow: hidden;
+    }
+        .new_player .nb_cards .bouton_nb_cards{
+            width: 44%;
+            margin-left: 4% ;
+            background-color: rgba(255,255,255,0.8);
+            font-size:90px;
+            float: left;
+            cursor: pointer;
+        }
+            .new_player .nb_cards .bouton_nb_cards.active{
+                background-color:rgba(200,200,200,0.8);
+            }
+    .new_player .container_button{
+        margin-top:100px;
+    }
+        .new_player .container_button .button{
+            width: 50%;
+            margin:auto;
+            color:white;
+            font-size:200%;
+            padding:15px 0;
+            background-color: rgb(72,119,184);
+            cursor: pointer;
+            border:transparent;
+        }
+            .new_player .container_button .button:hover{
+                background-color: #1c5097;
+            }
