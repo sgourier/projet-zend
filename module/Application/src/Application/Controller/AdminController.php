@@ -17,6 +17,8 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
 use Application\Entity\Game;
+use Application\Model\Prices;          // <-- Add this import
+use Application\Form\PricesForm;       // <-- Add this import
 
 class AdminController extends AbstractActionController
 {
@@ -43,15 +45,13 @@ class AdminController extends AbstractActionController
     }
 
 
-
-    public function endAction(){
+    public function endAction()
+    {
         $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
 
         $game = new Game();
         $game->setActive(false);
     }
-
-
 
 
     public function tirageAction()
@@ -62,4 +62,22 @@ class AdminController extends AbstractActionController
 
         return $result;
     }
+
+    public function pricesAction()
+    {
+        $form = new PricesForm();
+        $request = $this->getRequest();
+
+         if ($request->isPost()) {
+            $price = new Prices();
+            $form->setInputFilter($price->getInputFilter());
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+                $price->exchangeArray($form->getData());
+            }
+        }
+        return array('form' => $form);
+    }
+
 }
