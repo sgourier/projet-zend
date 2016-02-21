@@ -37,6 +37,21 @@
     .content{
         width: 75%;
     }
+        .content .timer{
+            position: fixed;
+            width:100px;
+            top:10px;
+            left:0;
+            background-color:rgba(255,255,255,0.8);
+            padding:7px;
+            text-align: center;
+            padding-left:40px;
+            font-size:200%;
+            background-image:url('../img/game/clock.png');
+            background-repeat:no-repeat;
+            background-position:5px center;
+            background-size:auto 50%;
+        }
         .content .container_new_number{
             width:100%;
             text-align: center;
