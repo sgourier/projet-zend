@@ -13,6 +13,7 @@ function afficher_game(obj){
     console.log("Affichage game");
     obj.style.display = "none";
     $(".container_admin_game").css("display","block");
+    creer_partie();
     lancer_timer();
 }
 

@@ -32,6 +32,31 @@ return array(
 		            ),
 	            ),
             ),
+
+
+            /**************************************************************************/
+            /*                                     LOGIN                               */
+            /**************************************************************************/
+            'login' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/login',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\User',
+                        'action'     => 'login' ,
+                    ),
+                ),
+            ),
+            'saveUser' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/saveUser',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\User',
+                        'action'     => 'saveUser' ,
+                    ),
+                ),
+            ),
             'newplayer' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -42,16 +67,33 @@ return array(
                     ),
                 ),
             ),
+
+            /**************************************************************************/
+            /*                                     GAME                               */
+            /**************************************************************************/
+            // Page du jeu
             'game' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/game/new',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Game',
+                        'action'     => 'new' ,
+                    ),
+                ),
+            ),
+            // Création d'une nouvelle partie
+            'new' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route'    => '/game',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Game',
-                        'action'     => 'index' ,
+                        'action'     => 'new' ,
                     ),
                 ),
             ),
+            // Page d'attente pour les joueurs avant début de la partie
             'wait' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -62,36 +104,7 @@ return array(
                     ),
                 ),
             ),
-            'admin' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route'    => '/admin',
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\Admin',
-                        'action'     => 'index' ,
-                    ),
-                ),
-            ),
-            'login' => array(
-	            'type' => 'Zend\Mvc\Router\Http\Literal',
-	            'options' => array(
-		            'route'    => '/login',
-		            'defaults' => array(
-			            'controller' => 'Application\Controller\User',
-			            'action'     => 'login' ,
-		            ),
-	            ),
-            ),
-            'saveUser' => array(
-	            'type' => 'Zend\Mvc\Router\Http\Literal',
-	            'options' => array(
-		            'route'    => '/saveUser',
-		            'defaults' => array(
-			            'controller' => 'Application\Controller\User',
-			            'action'     => 'saveUser' ,
-		            ),
-	            ),
-            ),
+            // Page de tirage d'un nouveau chiffre
             'tirage' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -99,6 +112,20 @@ return array(
                     'defaults' => array(
                         'controller' => 'Application\Controller\Admin',
                         'action'     => 'tirage' ,
+                    ),
+                ),
+            ),
+            /**************************************************************************/
+            /*                                     ADMIN                              */
+            /**************************************************************************/
+            // Page d'admin du jeu
+            'admin' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/admin',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Admin',
+                        'action'     => 'index' ,
                     ),
                 ),
             ),
