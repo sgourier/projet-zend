@@ -4,7 +4,7 @@ var timer = 10;
 function lancer_partie( obj , url ){
 
     console.log("Lancer jeu");
-    var baseUrl = url;
+    baseUrl = url;
     afficher_game(obj);
 }
 
@@ -34,14 +34,13 @@ function change_time(){
     if(actual_time >= 0){
         $(".timer").html(actual_time);
         actual_time--;
+        window.setTimeout("change_time()", 1000);
     }
     else{
-        alert("Tirage");
         tirer_chiffre();
         actual_time = timer;
     }
 
-    window.setTimeout("change_time()", 1000);
 }
 
 
@@ -50,7 +49,6 @@ function change_time(){
 /****************************************************************************************/
 
 function tirer_chiffre(){
-    alert();
     $.ajax({
         url: baseUrl+"/tirage"
     }).done(function( data ) {
@@ -61,7 +59,15 @@ function tirer_chiffre(){
 
 /****************************************************************************************/
 /*                                      GAME                                            */
-/****************************************************************************************/
+/****************************************************************************************/4
+function creer_partie(){
+    $.ajax({
+        url: baseUrl+"game/new"
+    }).done(function( data ) {
+        alert(data) ;
+    });
+}
+
 function endGame(url){
     $.ajax({
         url: baseUrl+"/tirage"

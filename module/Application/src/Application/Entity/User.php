@@ -311,4 +311,17 @@ class User
     {
         return $this->admin;
     }
+
+
+/******************************************************************************************/
+/*                           METHODES PERSONNALISEES                                      */
+/******************************************************************************************/
+
+    public function loadUserById($em,$id){
+        $entities = $em->getRepository('Application\Entity\User')->findBy(array('id' => $id));
+
+        foreach($entities as $entite){
+            return $entite;
+        }
+    }
 }

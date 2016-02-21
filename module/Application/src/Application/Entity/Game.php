@@ -43,23 +43,8 @@ class Game
      */
     private $active;
 
-	/**
-	 * @var \DateTime
-	 *
-	 * @ORM\Column(name="datestart", type="datetime", nullable=false)
-	 */
-	private $datestart;
-
-	/**
-	 * @var \DateTime
-	 *
-	 * @ORM\Column(name="dateend", type="datetime", nullable=true)
-	 */
-	private $dateend;
-
 	function __construct()
 	{
-		$this->datestart = new \DateTime();
 		$this->active    = 1;
 		$this->dateupd   = new \DateTime();
 		$this->dateadd   = new \DateTime();
@@ -144,49 +129,30 @@ class Game
         return $this->active;
     }
 
-	/**
-	 * Set datestart
-	 *
-	 * @param \DateTime $datestart
-	 * @return Game
-	 */
-	public function setDatestart($datestart)
-	{
-		$this->datestart = $datestart;
 
-		return $this;
-	}
 
-	/**
-	 * Get datestart
-	 *
-	 * @return \DateTime
-	 */
-	public function getDatestart()
-	{
-		return $this->datestart;
-	}
 
-	/**
-	 * Set dateend
-	 *
-	 * @param \DateTime $dateend
-	 * @return Game
-	 */
-	public function setDateend($dateend)
-	{
-		$this->dateend = $dateend;
 
-		return $this;
-	}
 
-	/**
-	 * Get dateend
-	 *
-	 * @return \DateTime
-	 */
-	public function getDateend()
-	{
-		return $this->dateend;
-	}
+
+
+
+
+
+
+/******************************************************************************************/
+/*                           METHODES PERSONNALISEES                                      */
+/******************************************************************************************/
+
+
+
+
+    public function getCurrentGame($em){
+        $entities = $em->getRepository('Application\Entity\Game')->findBy(array('active' => 1));
+
+        foreach($entities as $entite){
+            return $entite;
+        }
+    }
+
 }

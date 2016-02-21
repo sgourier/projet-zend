@@ -75,10 +75,10 @@ return array(
             'game' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
-                    'route'    => '/game/new',
+                    'route'    => '/game',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Game',
-                        'action'     => 'new' ,
+                        'action'     => 'index' ,
                     ),
                 ),
             ),
@@ -86,7 +86,7 @@ return array(
             'new' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
-                    'route'    => '/game',
+                    'route'    => '/game/new',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Game',
                         'action'     => 'new' ,
@@ -101,6 +101,17 @@ return array(
                     'defaults' => array(
                         'controller' => 'Application\Controller\Game',
                         'action'     => 'wait' ,
+                    ),
+                ),
+            ),
+            // Création d'une nouvelle carte de jeu
+            'card_new' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/card/new',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Card',
+                        'action'     => 'new' ,
                     ),
                 ),
             ),
@@ -196,6 +207,7 @@ return array(
             'Application\Controller\Index' => Controller\IndexController::class,
             'Application\Controller\Admin' => Controller\AdminController::class,
             'Application\Controller\Game' => Controller\GameController::class,
+            'Application\Controller\Card' => Controller\CardController::class,
             'Application\Controller\User' => Controller\UserController::class
         ),
     ),
