@@ -121,8 +121,8 @@ return array(
                 'options' => array(
                     'route'    => '/tirage',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Admin',
-                        'action'     => 'tirage' ,
+                        'controller' => 'Application\Controller\Numbers',
+                        'action'     => 'new' ,
                     ),
                 ),
             ),
@@ -208,6 +208,7 @@ return array(
             'Application\Controller\Admin' => Controller\AdminController::class,
             'Application\Controller\Game' => Controller\GameController::class,
             'Application\Controller\Card' => Controller\CardController::class,
+            'Application\Controller\Numbers' => Controller\NumbersController::class,
             'Application\Controller\User' => Controller\UserController::class
         ),
     ),

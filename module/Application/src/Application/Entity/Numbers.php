@@ -125,4 +125,19 @@ class Numbers
     {
         return $this->card;
     }
+
+
+
+
+/******************************************************************************************/
+/*                           METHODES PERSONNALISEES                                      */
+/******************************************************************************************/
+
+    public function foundNumbersByCards($em,$value,$cards){
+        $entities = $em->getRepository('Application\Entity\Numbers')->findBy(array('number' => $value));
+
+        foreach($entities as $entite){
+            return $entite;
+        }
+    }
 }

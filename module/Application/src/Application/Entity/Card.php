@@ -188,4 +188,17 @@ class Card
     {
         return $this->user;
     }
+
+
+
+/******************************************************************************************/
+/*                           METHODES PERSONNALISEES                                      */
+/******************************************************************************************/
+    public function getCurrentsCards($em , $currentGame){
+
+        $id_game = $currentGame->getId();
+
+        return $em->getRepository('Application\Entity\Card')->findBy(array('game_id' => $id_game));
+
+    }
 }
