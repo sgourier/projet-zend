@@ -71,7 +71,7 @@ return array(
             /**************************************************************************/
             /*                                     GAME                               */
             /**************************************************************************/
-            // Page du jeu
+            // D'accueil
             'game' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -79,6 +79,17 @@ return array(
                     'defaults' => array(
                         'controller' => 'Application\Controller\Game',
                         'action'     => 'index' ,
+                    ),
+                ),
+            ),
+            // Page du jeu
+            'playgame' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/game/play',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Game',
+                        'action'     => 'play' ,
                     ),
                 ),
             ),
@@ -104,6 +115,28 @@ return array(
                     ),
                 ),
             ),
+            // Page d'attente pour les joueurs avant fin partie en cours
+            'waitgame' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/game/waitgame',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Game',
+                        'action'     => 'waitgame' ,
+                    ),
+                ),
+            ),
+            // Page d'attente pour les joueurs avant fin partie en cours
+            'gamebegin' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/game/gamebegin',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Game',
+                        'action'     => 'gamebegin' ,
+                    ),
+                ),
+            ),
             // Création d'une nouvelle carte de jeu
             'card_new' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
@@ -121,7 +154,7 @@ return array(
                 'options' => array(
                     'route'    => '/tirage',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Numbers',
+                        'controller' => 'Application\Controller\NumbersGame',
                         'action'     => 'new' ,
                     ),
                 ),
@@ -209,6 +242,7 @@ return array(
             'Application\Controller\Game' => Controller\GameController::class,
             'Application\Controller\Card' => Controller\CardController::class,
             'Application\Controller\Numbers' => Controller\NumbersController::class,
+            'Application\Controller\NumbersGame' => Controller\NumbersGameController::class,
             'Application\Controller\User' => Controller\UserController::class
         ),
     ),
