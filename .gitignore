@@ -8,3 +8,4 @@ nbproject
 .project
 .settings
 composer.phar
+vendor/
