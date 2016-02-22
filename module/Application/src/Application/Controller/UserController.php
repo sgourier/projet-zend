@@ -30,9 +30,7 @@ class UserController extends AbstractActionController
 			return $this->redirect()->toRoute('game');
 		}
 
-		return new ViewModel(array(
-			'error' => 'Vos identifiants de connexion ne sont pas valides',
-		));
+		return $this->redirect()->toRoute('home');
 	}
 
 	public function saveUserAction()
@@ -61,8 +59,7 @@ class UserController extends AbstractActionController
 			return $this->redirect()->toRoute('game');
 		}
 
-		return new ViewModel(array(
-			'error' => 'Votre nom d\'utilisateur n\'est pas valide',
-		));
+		return $this->redirect()->toRoute('home');
+
 	}
 }
