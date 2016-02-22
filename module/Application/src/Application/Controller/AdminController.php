@@ -17,8 +17,8 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
 use Application\Entity\Game;
-use Application\Model\Prices;          // <-- Add this import
-use Application\Form\PricesForm;       // <-- Add this import
+use Application\Model\Prices;
+use Application\Form\PricesForm;
 
 class AdminController extends AbstractActionController
 {
